@@ -1,5 +1,5 @@
-import { Box, Button, Heading, Text, VStack, HStack, Link, Icon, Divider } from "@chakra-ui/react";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { Box, Button, Heading, Text, VStack, HStack, Link, Icon, Divider, Image, SimpleGrid } from "@chakra-ui/react";
+import { FaGithub, FaLinkedin, FaEnvelope, FaExternalLinkAlt } from "react-icons/fa";
 
 export default function App() {
   return (
@@ -37,23 +37,26 @@ export default function App() {
       <VStack id="projects" p={10} spacing={4} textAlign="center">
         <Heading as="h2" size="lg">Projects</Heading>
         <Text color="gray.700">Here are some of my recent works:</Text>
-        <VStack spacing={6}>
-          <Box p={4} borderWidth="1px" borderRadius="md" shadow="md" w="80%">
+        <SimpleGrid columns={[1, 2]} spacing={6} mt={6} w="80%" mx="auto">
+          <Box p={4} borderWidth="1px" borderRadius="md" shadow="md" textAlign="left">
+            <Image src="/images/calmspace.png" alt="Calm Space" borderRadius="md" mb={4} />
             <Heading as="h3" size="md">Calm Space</Heading>
             <Text mt={2}>A meditation app with filterable audio sessions and progress tracking.</Text>
             <HStack mt={2} spacing={4}>
-              <Link href="#" color="blue.500">Live Demo</Link>
-              <Link href="#" color="blue.500">GitHub Repo</Link>
+              <Button as={Link} href="#" colorScheme="blue" leftIcon={<FaExternalLinkAlt />}>Live Demo</Button>
+              <Button as={Link} href="#" colorScheme="gray" leftIcon={<FaGithub />}>GitHub Repo</Button>
             </HStack>
           </Box>
-          <Box p={4} borderWidth="1px" borderRadius="md" shadow="md" w="80%">
+          <Box p={4} borderWidth="1px" borderRadius="md" shadow="md" textAlign="left">
+            <Image src="/images/gamespace.png" alt="Game Space" borderRadius="md" mb={4} />
             <Heading as="h3" size="md">Game Space</Heading>
             <Text mt={2}>A gaming collection and wishlist tracker.</Text>
             <HStack mt={2} spacing={4}>
-              <Link href="#" color="blue.500">GitHub Repo</Link>
+              <Button as={Link} href="#" colorScheme="blue" leftIcon={<FaExternalLinkAlt />}>Live Demo</Button>
+              <Button as={Link} href="#" colorScheme="gray" leftIcon={<FaGithub />}>GitHub Repo</Button>
             </HStack>
           </Box>
-        </VStack>
+        </SimpleGrid>
       </VStack>
 
       <Divider my={8} />
