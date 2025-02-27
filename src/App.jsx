@@ -4,7 +4,6 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaExternalLinkAlt } from "react-icons
 export default function App() {
   return (
     <Box>
-      {/* Navbar */}
       <Box as="nav" bg="blue.500" color="white" p={4} textAlign="center">
         <HStack justify="center" spacing={8}>
           <Link href="#about" _hover={{ textDecoration: "underline" }}>About</Link>
@@ -13,7 +12,6 @@ export default function App() {
         </HStack>
       </Box>
 
-      {/* Hero Section */}
       <VStack p={10} textAlign="center" spacing={4}>
         <Heading as="h1" size="xl">Welcome to My Portfolio</Heading>
         <Text fontSize="lg" color="gray.600">Full Stack Web Developer passionate about intuitive user experiences.</Text>
@@ -22,7 +20,6 @@ export default function App() {
 
       <Divider my={8} />
 
-      {/* About Me Section */}
       <VStack id="about" p={10} spacing={4} textAlign="center">
         <Heading as="h2" size="lg">About Me</Heading>
         <Text maxW="600px" color="gray.700">
@@ -33,7 +30,6 @@ export default function App() {
 
       <Divider my={8} />
 
-      {/* Projects Section */}
       <VStack id="projects" p={10} spacing={4} textAlign="center">
         <Heading as="h2" size="lg">Projects</Heading>
         <Text color="gray.700">Here are some of my recent works:</Text>
@@ -61,7 +57,6 @@ export default function App() {
 
       <Divider my={8} />
 
-      {/* Contact Section */}
       <VStack id="contact" p={10} spacing={4} textAlign="center">
         <Heading as="h2" size="lg">Contact</Heading>
         <Text>Let's connect! Reach out via email or social media.</Text>
