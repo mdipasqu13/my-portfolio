@@ -41,6 +41,79 @@ export default function App() {
 
       <Divider my={8} />
 
+      {/* Skills Section */}
+      <VStack id="skills" p={10} spacing={4} textAlign="center">
+        <Heading as="h2" size="lg">Skills</Heading>
+        <SimpleGrid columns={[3, 4, 6]} spacing={6} mt={4} w="60%" mx="auto">
+          <VStack>
+            <Image src="/js-icon.png" alt="JavaScript" boxSize={10} />
+            <Text fontSize="sm">JavaScript</Text>
+          </VStack>
+          <VStack>
+            <Image src="/python-icon.jpg" alt="Python" boxSize={10} />
+            <Text fontSize="sm">Python</Text>
+          </VStack>
+          <VStack>
+            <Image src="/react-icon.jpg" alt="React" boxSize={10} />
+            <Text fontSize="sm">React</Text>
+          </VStack>
+          <VStack>
+            <Image src="/flask-icon.png" alt="Flask" boxSize={10} />
+            <Text fontSize="sm">Flask</Text>
+          </VStack>
+          <VStack>
+            <Image src="/html-5-icon.png" alt="HTML" boxSize={10} />
+            <Text fontSize="sm">HTML</Text>
+          </VStack>
+          <VStack>
+            <Image src="/css-logo.jpeg" alt="CSS" boxSize={10} />
+            <Text fontSize="sm">CSS</Text>
+          </VStack>
+          <VStack>
+            <Image src="/git-icon.webp" alt="Git" boxSize={10} />
+            <Text fontSize="sm">Git</Text>
+          </VStack>
+          <VStack>
+            <Image src="/rest-api-icon.png" alt="REST APIs" boxSize={10} />
+            <Text fontSize="sm">REST APIs</Text>
+          </VStack>
+          <VStack>
+            <Image src="/sql-icon.png" alt="SQL" boxSize={10} />
+            <Text fontSize="sm">SQL</Text>
+          </VStack>
+          <VStack>
+            <Image src="/node-js-icon.jpeg" alt="Node.js" boxSize={10} />
+            <Text fontSize="sm">Node.js</Text>
+          </VStack>
+          <VStack>
+            <Image src="/tailwind-css-icon.jpeg" alt="Tailwind" boxSize={10} />
+            <Text fontSize="sm">Tailwind</Text>
+          </VStack>
+          <VStack>
+            <Image src="/mui-icon.jpeg" alt="MUI" boxSize={10} />
+            <Text fontSize="sm">MUI</Text>
+          </VStack>
+          <VStack>
+            <Image src="/vite-icon.webp" alt="Vite" boxSize={10} />
+            <Text fontSize="sm">Vite</Text>
+          </VStack>
+          <VStack>
+            <Image src="/chakra-ui-icon.jpg" alt="Chakra UI" boxSize={10} />
+            <Text fontSize="sm">Chakra UI</Text>
+          </VStack>
+          <VStack>
+            <Image src="/vercel-icon.svg" alt="Vercel" boxSize={10} />
+            <Text fontSize="sm">Vercel</Text>
+          </VStack>
+          <VStack>
+            <Image src="/npm-icon.png" alt="NPM" boxSize={10} />
+            <Text fontSize="sm">NPM</Text>
+          </VStack>
+        </SimpleGrid>
+      </VStack>
+
+      <Divider my={8} />
+
       {/* Projects Section */}
       <VStack id="projects" p={10} spacing={4} textAlign="center">
         <Heading as="h2" size="lg">Projects</Heading>
