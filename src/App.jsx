@@ -8,6 +8,7 @@ export default function App() {
       <Box as="nav" bg="blue.500" color="white" p={4} textAlign="center">
         <HStack justify="center" spacing={8}>
           <Link href="#about" _hover={{ textDecoration: "underline" }}>About</Link>
+          <Link href="#skills" _hover={{ textDecoration: "underline" }}>Skills</Link>
           <Link href="#projects" _hover={{ textDecoration: "underline" }}>Projects</Link>
           <Link href="#contact" _hover={{ textDecoration: "underline" }}>Contact</Link>
         </HStack>
