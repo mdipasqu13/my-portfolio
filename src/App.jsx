@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaExternalLinkAlt } from "react-icons
 
 export default function App() {
   return (
-    <Box>
+    <Box bg="#F7F7F7" minH="100vh">
       {/* Navbar */}
       <Box as="nav" bg="blue.500" color="white" p={4} textAlign="center">
         <HStack justify="center" spacing={8}>
@@ -15,7 +15,14 @@ export default function App() {
 
       {/* Profile Photo Section */}
       <VStack p={10} textAlign="center" spacing={4}>
-      <Image src="/profile-photo.jpeg" alt="Profile Photo" borderRadius="full" width="200px" height="auto" mb={4} />
+      <Image 
+          src="/profile-photo.jpeg" 
+          alt="Profile Photo" 
+          borderRadius="full" 
+          width="200px" 
+          height="auto" 
+          boxShadow="lg" 
+        />
         <Heading as="h1" size="xl">Welcome to My Portfolio</Heading>
         <Text fontSize="lg" color="gray.600">Full Stack Web Developer passionate about intuitive user experiences.</Text>
         <Button colorScheme="blue" size="lg">Get Started</Button>
