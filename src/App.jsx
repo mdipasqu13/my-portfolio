@@ -1,22 +1,22 @@
 import { Box, Button, Heading, Text, VStack, HStack, Link, Icon, Divider, Image, SimpleGrid } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin, FaEnvelope, FaExternalLinkAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function App() {
   return (
-    <Box bg="#F7F7F7" minH="100vh">
+    <Box bg="#F7F7F7" minH="100vh" color="gray.800">
       {/* Navbar */}
       <Box as="nav" bg="blue.500" color="white" p={4} textAlign="center">
         <HStack justify="center" spacing={8}>
           <Link href="#about" _hover={{ textDecoration: "underline" }}>About</Link>
-          <Link href="#skills" _hover={{ textDecoration: "underline" }}>Skills</Link>
           <Link href="#projects" _hover={{ textDecoration: "underline" }}>Projects</Link>
           <Link href="#contact" _hover={{ textDecoration: "underline" }}>Contact</Link>
         </HStack>
       </Box>
 
-      {/* Profile Photo Section */}
+      {/* Profile Section */}
       <VStack p={10} textAlign="center" spacing={4}>
-      <Image 
+        <Image 
           src="/profile-photo.jpeg" 
           alt="Profile Photo" 
           borderRadius="full" 
@@ -25,7 +25,9 @@ export default function App() {
           boxShadow="lg" 
         />
         <Heading as="h1" size="xl">Welcome to My Portfolio</Heading>
-        <Text fontSize="lg" color="gray.600">Full Stack Web Developer passionate about intuitive user experiences.</Text>
+        <Text fontSize="lg" color="gray.700">
+          Full Stack Web Developer passionate about intuitive user experiences.
+        </Text>
         <Button colorScheme="blue" size="lg">Get Started</Button>
       </VStack>
 
@@ -46,70 +48,29 @@ export default function App() {
       <VStack id="skills" p={10} spacing={4} textAlign="center">
         <Heading as="h2" size="lg">Skills</Heading>
         <SimpleGrid columns={[3, 4, 6]} spacing={6} mt={4} w="60%" mx="auto">
-          <VStack>
-            <Image src="/js-icon.png" alt="JavaScript" boxSize={10} />
-            <Text fontSize="sm">JavaScript</Text>
-          </VStack>
-          <VStack>
-            <Image src="/python-icon.jpg" alt="Python" boxSize={10} />
-            <Text fontSize="sm">Python</Text>
-          </VStack>
-          <VStack>
-            <Image src="/react-icon.jpg" alt="React" boxSize={10} />
-            <Text fontSize="sm">React</Text>
-          </VStack>
-          <VStack>
-            <Image src="/flask-icon.png" alt="Flask" boxSize={10} />
-            <Text fontSize="sm">Flask</Text>
-          </VStack>
-          <VStack>
-            <Image src="/html-5-icon.png" alt="HTML" boxSize={10} />
-            <Text fontSize="sm">HTML</Text>
-          </VStack>
-          <VStack>
-            <Image src="/css-logo.jpeg" alt="CSS" boxSize={10} />
-            <Text fontSize="sm">CSS</Text>
-          </VStack>
-          <VStack>
-            <Image src="/git-icon.webp" alt="Git" boxSize={10} />
-            <Text fontSize="sm">Git</Text>
-          </VStack>
-          <VStack>
-            <Image src="/rest-api-icon.png" alt="REST APIs" boxSize={10} />
-            <Text fontSize="sm">REST APIs</Text>
-          </VStack>
-          <VStack>
-            <Image src="/sql-icon.png" alt="SQL" boxSize={10} />
-            <Text fontSize="sm">SQL</Text>
-          </VStack>
-          <VStack>
-            <Image src="/node-js-icon.jpeg" alt="Node.js" boxSize={10} />
-            <Text fontSize="sm">Node.js</Text>
-          </VStack>
-          <VStack>
-            <Image src="/tailwind-css-icon.jpeg" alt="Tailwind" boxSize={10} />
-            <Text fontSize="sm">Tailwind</Text>
-          </VStack>
-          <VStack>
-            <Image src="/mui-icon.jpeg" alt="MUI" boxSize={10} />
-            <Text fontSize="sm">MUI</Text>
-          </VStack>
-          <VStack>
-            <Image src="/vite-icon.webp" alt="Vite" boxSize={10} />
-            <Text fontSize="sm">Vite</Text>
-          </VStack>
-          <VStack>
-            <Image src="/chakra-ui-icon.jpg" alt="Chakra UI" boxSize={10} />
-            <Text fontSize="sm">Chakra UI</Text>
-          </VStack>
-          <VStack>
-            <Image src="/vercel-icon.svg" alt="Vercel" boxSize={10} />
-            <Text fontSize="sm">Vercel</Text>
-          </VStack>
-          <VStack>
-            <Image src="/npm-icon.png" alt="NPM" boxSize={10} />
-            <Text fontSize="sm">NPM</Text>
-          </VStack>
+          {[
+            ["js-icon.png", "JavaScript"],
+            ["python-icon.jpg", "Python"],
+            ["react-icon.jpg", "React"],
+            ["flask-icon.png", "Flask"],
+            ["html-5-icon.png", "HTML"],
+            ["css-logo.jpeg", "CSS"],
+            ["git-icon.webp", "Git"],
+            ["rest-api-icon.png", "REST APIs"],
+            ["sql-icon.png", "SQL"],
+            ["node-js-icon.jpeg", "Node.js"],
+            ["tailwind-css-icon.jpeg", "Tailwind"],
+            ["mui-icon.jpeg", "MUI"],
+            ["vite-icon.webp", "Vite"],
+            ["chakra-ui-icon.jpg", "Chakra UI"],
+            ["vercel-icon.svg", "Vercel"],
+            ["npm-icon.png", "NPM"],
+          ].map(([src, label]) => (
+            <VStack key={label}>
+              <Image src={`/${src}`} alt={label} boxSize={10} />
+              <Text fontSize="sm" color="gray.700">{label}</Text>
+            </VStack>
+          ))}
         </SimpleGrid>
       </VStack>
 
@@ -120,24 +81,45 @@ export default function App() {
         <Heading as="h2" size="lg">Projects</Heading>
         <Text color="gray.700">Here are some of my recent works:</Text>
         <SimpleGrid columns={[1, 2]} spacing={6} mt={6} w="50%" mx="auto">
-          <Box p={4} borderWidth="1px" borderRadius="md" shadow="md" textAlign="left">
-            <Image src="/CalmSpaceLogo.png" alt="Calm Space" borderRadius="md" mb={4} boxSize="200px" objectFit="contain" />
-            <Heading as="h3" size="md">Calm Space</Heading>
-            <Text mt={2}>A meditation app with filterable audio sessions and progress tracking.</Text>
-            <HStack mt={2} spacing={4}>
-              <Button as={Link} href="#" colorScheme="blue" leftIcon={<FaExternalLinkAlt />}>Live Demo</Button>
-              <Button as={Link} href="#" colorScheme="gray" leftIcon={<FaGithub />}>GitHub Repo</Button>
-            </HStack>
-          </Box>
-          <Box p={4} borderWidth="1px" borderRadius="md" shadow="md" textAlign="left">
-            <Image src="/GamespaceLogo.png" alt="Game Space" borderRadius="md" mb={4} boxSize="200px" objectFit="contain" />
-            <Heading as="h3" size="md">Game Space</Heading>
-            <Text mt={2}>A gaming collection and wishlist tracker.</Text>
-            <HStack mt={2} spacing={4}>
-              <Button as={Link} href="#" colorScheme="blue" leftIcon={<FaExternalLinkAlt />}>Live Demo</Button>
-              <Button as={Link} href="#" colorScheme="gray" leftIcon={<FaGithub />}>GitHub Repo</Button>
-            </HStack>
-          </Box>
+          {[
+            {
+              title: "Calm Space",
+              description: "A meditation app with filterable audio sessions and progress tracking.",
+              image: "/CalmSpaceLogo.png",
+              live: "#",
+              repo: "#"
+            },
+            {
+              title: "Game Space",
+              description: "A gaming collection and wishlist tracker.",
+              image: "/GamespaceLogo.png",
+              live: "#",
+              repo: "#"
+            },
+            {
+              title: "BookMe!",
+              description: "A modern booking app with real-time availability, email confirmations, and admin controls.",
+              image: "/BookMeLogo.png",
+              live: "https://book-me-now.vercel.app",
+              repo: "https://github.com/mdipasqu13/booking-app"
+            }
+          ].map(({ title, description, image, live, repo }) => (
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              key={title}
+            >
+              <Box p={4} borderWidth="1px" borderRadius="md" shadow="md" textAlign="left" bg="white">
+                <Image src={image} alt={title} borderRadius="md" mb={4} boxSize="200px" objectFit="contain" />
+                <Heading as="h3" size="md" color="gray.800">{title}</Heading>
+                <Text mt={2} color="gray.700">{description}</Text>
+                <HStack mt={2} spacing={4}>
+                  <Button as={Link} href={live} target="_blank" colorScheme="blue" leftIcon={<FaExternalLinkAlt />}>Live Demo</Button>
+                  <Button as={Link} href={repo} target="_blank" colorScheme="gray" leftIcon={<FaGithub />}>GitHub Repo</Button>
+                </HStack>
+              </Box>
+            </motion.div>
+          ))}
         </SimpleGrid>
       </VStack>
 
@@ -146,7 +128,7 @@ export default function App() {
       {/* Contact Section */}
       <VStack id="contact" p={10} spacing={4} textAlign="center">
         <Heading as="h2" size="lg">Contact</Heading>
-        <Text>Let's connect! Reach out via email or social media.</Text>
+        <Text color="gray.700">Let's connect! Reach out via email or social media.</Text>
         <HStack spacing={6}>
           <Link href="mailto:michaeldipasquale313@gmail.com" color="blue.500">
             <Image src="/GmailIcon.png" alt="Gmail" boxSize={6} />
