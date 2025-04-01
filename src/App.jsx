@@ -12,7 +12,7 @@ import {
   useColorMode,
   useColorModeValue,
   IconButton,
-  Spacer,
+  Flex,
 } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin, FaExternalLinkAlt, FaSun, FaMoon } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -27,13 +27,17 @@ export default function App() {
   return (
     <Box bg={bgColor} minH="100vh" color={textColor}>
       {/* Navbar */}
-      <Box as="nav" bg="blue.500" color="white" px={6} py={4}>
-        <HStack justify="space-between">
-          <HStack spacing={8}>
-            <Link href="#about" _hover={{ textDecoration: "underline" }}>About</Link>
-            <Link href="#projects" _hover={{ textDecoration: "underline" }}>Projects</Link>
-            <Link href="#contact" _hover={{ textDecoration: "underline" }}>Contact</Link>
-          </HStack>
+      <Box
+        as="nav"
+        bg="blue.500"
+        color="white"
+        px={6}
+        py={4}
+        position="sticky"
+        top={0}
+        zIndex={1000}
+      >
+        <Flex align="center" justify="space-between" position="relative">
           <IconButton
             icon={colorMode === "light" ? <FaMoon /> : <FaSun />}
             onClick={toggleColorMode}
@@ -41,8 +45,18 @@ export default function App() {
             aria-label="Toggle dark mode"
             color="white"
             _hover={{ bg: "blue.600" }}
+            position="absolute"
+            left="0"
           />
-        </HStack>
+          <Box mx="auto">
+            <HStack spacing={8} justify="center">
+              <Link href="#about" _hover={{ textDecoration: "underline" }}>About</Link>
+              <Link href="#projects" _hover={{ textDecoration: "underline" }}>Projects</Link>
+              <Link href="#contact" _hover={{ textDecoration: "underline" }}>Contact</Link>
+            </HStack>
+          </Box>
+          <Box w="40px" />
+        </Flex>
       </Box>
 
       {/* Profile Section */}
@@ -64,7 +78,7 @@ export default function App() {
       <Divider my={8} />
 
       {/* About Section */}
-      <VStack id="about" p={10} spacing={4} textAlign="center">
+      <VStack id="about" scrollMarginTop="80px" p={10} spacing={4} textAlign="center">
         <Heading as="h2" size="lg">About Me</Heading>
         <Text maxW="600px" color={mutedText}>
           I’m a software developer with a background in education and program management.
@@ -75,7 +89,7 @@ export default function App() {
       <Divider my={8} />
 
       {/* Skills */}
-      <VStack id="skills" p={10} spacing={4} textAlign="center">
+      <VStack id="skills" scrollMarginTop="80px" p={10} spacing={4} textAlign="center">
         <Heading as="h2" size="lg">Skills</Heading>
         <SimpleGrid columns={[3, 4, 6]} spacing={6} mt={4} w="60%" mx="auto">
           {[
@@ -107,7 +121,7 @@ export default function App() {
       <Divider my={8} />
 
       {/* Projects */}
-      <VStack id="projects" p={10} spacing={4} textAlign="center">
+      <VStack id="projects" scrollMarginTop="80px" p={10} spacing={4} textAlign="center">
         <Heading as="h2" size="lg">Projects</Heading>
         <Text color={mutedText}>Here are some of my recent works:</Text>
         <SimpleGrid columns={[1, 2]} spacing={6} mt={6} w="50%" mx="auto">
